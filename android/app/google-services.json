@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "972299074776",
+    "project_id": "avail-38482",
+    "storage_bucket": "avail-38482.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:972299074776:android:504f4734c805b3f5cf6bad",
+        "android_client_info": {
+          "package_name": "com.example.avail_itech_hackfest"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "972299074776-jc54gvkrm9fisdqean1ml8errvr910a8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDyqCCWquuHvKCpGBhveLoUHTPeqsuUh40"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "972299074776-jc54gvkrm9fisdqean1ml8errvr910a8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
