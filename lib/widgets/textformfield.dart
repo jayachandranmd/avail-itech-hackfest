@@ -7,7 +7,7 @@ import '../utils/colors.dart';
 class TextFieldInput extends StatelessWidget {
   final TextEditingController textEditingController;
   final bool isPass;
-  final String hintText;
+  final hintText;
   final validate;
   final save;
   final suffixIcon;

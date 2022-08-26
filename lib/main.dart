@@ -1,5 +1,4 @@
 import 'package:avail_itech_hackfest/screens/splash_screen.dart';
-import 'package:avail_itech_hackfest/screens/auth/sign_in.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
@@ -15,7 +14,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
+        debugShowCheckedModeBanner: false,
         home: const SplashScreen(),
         theme: ThemeData(fontFamily: 'productSans'));
   }
