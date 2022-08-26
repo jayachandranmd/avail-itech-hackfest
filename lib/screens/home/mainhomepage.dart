@@ -1,3 +1,4 @@
+import 'package:avail_itech_hackfest/screens/post_form.dart';
 import 'package:avail_itech_hackfest/utils/constants.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:card_swiper/card_swiper.dart';
@@ -26,20 +27,23 @@ class _MainHomePageState extends State<MainHomePage> {
             style: appbar,
           ),
           actions: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                CachedNetworkImage(
+            Padding(
+              padding: const EdgeInsets.all(15.0),
+              child: GestureDetector(
+                onTap: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>PostForm()));
+                },
+                child: CachedNetworkImage(
                   imageUrl:
                       "https://firebasestorage.googleapis.com/v0/b/avail-38482.appspot.com/o/add_post.png?alt=media&token=949efad9-626e-41eb-a3e9-addc663d200a",
                   height: 25,
                 ),
-                sBoxH10,
-                IconButton(
-                  icon: Icon(Icons.menu, color: white, size: 32),
-                  onPressed: () {},
-                ),
-              ],
+              ),
+            ),
+            sBoxH10,
+            IconButton(
+              icon: Icon(Icons.menu, color: white, size: 32),
+              onPressed: () {},
             ),
           ]),
       body: SingleChildScrollView(
@@ -75,7 +79,7 @@ class _MainHomePageState extends State<MainHomePage> {
                           builder:
                               (BuildContext context, AsyncSnapshot snapshot) {
                             if (!snapshot.hasData) {
-                              return const CircularProgressIndicator();
+                              return Center(child: const CircularProgressIndicator(color: Colors.black,));
                             }
                             return SizedBox(
                               height: 150,
@@ -154,7 +158,7 @@ class _MainHomePageState extends State<MainHomePage> {
                     FirebaseFirestore.instance.collection('feeds').snapshots(),
                 builder: (BuildContext context, AsyncSnapshot snapshot) {
                   if (!snapshot.hasData) {
-                    return const CircularProgressIndicator(color: Colors.black);
+                    return Center(child: const CircularProgressIndicator(color: Colors.black));
                   }
                   // ignore: sized_box_for_whitespace
                   return Container(
