@@ -39,6 +39,9 @@ const sBoxW30 = SizedBox(
 const sBoxW60 = SizedBox(
   width: 60,
 );
+const sBoxW40 = SizedBox(
+  width: 40,
+);
 
 const pad4 = EdgeInsets.all(4);
 const pad8 = EdgeInsets.all(8);
