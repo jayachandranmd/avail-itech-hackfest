@@ -5,8 +5,10 @@ class OnboardingPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Text('Checking font'),
+    return const SafeArea(
+      child: Scaffold(
+        body: Text('Checking font'),
+      ),
     );
   }
 }

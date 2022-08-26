@@ -37,6 +37,8 @@ dependencies:
     sdk: flutter
   fluttertoast: ^8.0.9
   hexcolor: ^2.0.7
+  cached_network_image: ^3.2.1
+  card_swiper: ^2.0.4
 
 dev_dependencies:
   flutter_lints: ^2.0.0
@@ -52,6 +54,8 @@ flutter:
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
+  assets:
+    - assets/
   # To add assets to your application, add an assets section, like this:
   # assets:
   #   - images/a_dot_burr.jpeg
