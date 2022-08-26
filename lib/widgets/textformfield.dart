@@ -55,3 +55,52 @@ class TextFieldInput extends StatelessWidget {
     );
   }
 }
+
+
+
+
+class FormsField extends StatelessWidget {
+  final TextEditingController textEditingController;
+  final hintText;
+  final validate;
+  final save;
+  final suffixIcon;
+  final keyboard;
+
+  const FormsField(
+      {Key? key,
+        required this.textEditingController,
+        this.validate,
+        this.keyboard,
+        this.hintText,
+        this.save,
+        this.suffixIcon})
+      : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: 100,
+      child: Theme(
+        data: Theme.of(context).copyWith(primaryColor: grey),
+        child: TextFormField(
+          autofocus: true,
+          keyboardType: keyboard,
+          autovalidateMode: AutovalidateMode.onUserInteraction,
+          validator: validate,
+          onSaved: save,
+          controller: textEditingController,
+          textInputAction: TextInputAction.next,
+          decoration: InputDecoration(
+            hintStyle: TextStyle(
+              fontStyle: FontStyle.italic
+            ),
+              focusColor: Colors.grey,
+              hintText: hintText,
+              contentPadding: const EdgeInsets.all(10),
+              suffixIcon: suffixIcon)
+        ),
+      ),
+    );
+  }
+}
