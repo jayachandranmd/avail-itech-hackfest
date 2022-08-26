@@ -1,3 +1,4 @@
+import 'package:avail_itech_hackfest/screens/contributers/contributer_intro.dart';
 import 'package:avail_itech_hackfest/screens/post_form.dart';
 import 'package:avail_itech_hackfest/utils/constants.dart';
 import 'package:cached_network_image/cached_network_image.dart';
@@ -31,7 +32,7 @@ class _MainHomePageState extends State<MainHomePage> {
               padding: const EdgeInsets.all(15.0),
               child: GestureDetector(
                 onTap: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context)=>PostForm()));
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>ContributerIntro()));
                 },
                 child: CachedNetworkImage(
                   imageUrl:
