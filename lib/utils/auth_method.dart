@@ -17,13 +17,13 @@ class AuthMethods {
   }
   // Signing Up User
 
-  Future<void> signUpUser(
+  Future<String> signUpUser(
       {required String email,
       required String password,
       required String firstName,
       required String lastName,
       required String phnNum}) async {
-    String? errorMessage;
+    String errorMessage = "Some error Occurred";
     try {
       if (email.isNotEmpty &&
           password.isNotEmpty &&
@@ -51,6 +51,7 @@ class AuthMethods {
             .collection("users")
             .doc(cred.user!.uid)
             .set(user.toJson());
+        errorMessage = "success";
       }
     } on FirebaseAuthException catch (error) {
       switch (error.code) {
@@ -78,14 +79,15 @@ class AuthMethods {
       Fluttertoast.showToast(msg: errorMessage);
     }
     Fluttertoast.showToast(msg: "Account created successfully!!!");
+    return errorMessage;
   }
 
   // logging in user
-  Future<void> loginUser({
+  Future<String> loginUser({
     required String email,
     required String password,
   }) async {
-    String? errorMessage;
+    String errorMessage = "Some error occured";
     try {
       if (email.isNotEmpty && password.isNotEmpty) {
         // logging in user with email and password
@@ -97,6 +99,7 @@ class AuthMethods {
             .catchError((e) {
           Fluttertoast.showToast(msg: e!.message);
         });
+        errorMessage = "success";
       }
     } on FirebaseAuthException catch (error) {
       switch (error.code) {
@@ -125,6 +128,7 @@ class AuthMethods {
       Fluttertoast.showToast(msg: errorMessage);
     }
     Fluttertoast.showToast(msg: "Login Successful");
+    return errorMessage;
   }
 
   Future<void> signOut() async {
