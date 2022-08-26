@@ -324,7 +324,7 @@ class _SignUpState extends State<SignUp> {
               ),
               sBoxH10,
               Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   GestureDetector(
                       child: Text(
@@ -338,7 +338,7 @@ class _SignUpState extends State<SignUp> {
                                 builder: (context) => const Login()));
                       }),
                   SizedBox(
-                    width: 180,
+                    width: 150,
                     height: 50,
                     child: ElevatedButton(
                       onPressed: () async {
