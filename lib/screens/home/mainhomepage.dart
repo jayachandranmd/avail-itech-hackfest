@@ -21,32 +21,6 @@ class _MainHomePageState extends State<MainHomePage> {
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
-      appBar: AppBar(
-          backgroundColor: black,
-          title: Text(
-            "Home",
-            style: appbar,
-          ),
-          actions: [
-            Padding(
-              padding: const EdgeInsets.all(15.0),
-              child: GestureDetector(
-                onTap: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context)=>ContributerIntro()));
-                },
-                child: CachedNetworkImage(
-                  imageUrl:
-                      "https://firebasestorage.googleapis.com/v0/b/avail-38482.appspot.com/o/add_post.png?alt=media&token=949efad9-626e-41eb-a3e9-addc663d200a",
-                  height: 25,
-                ),
-              ),
-            ),
-            sBoxH10,
-            IconButton(
-              icon: Icon(Icons.menu, color: white, size: 32),
-              onPressed: () {},
-            ),
-          ]),
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -80,7 +54,10 @@ class _MainHomePageState extends State<MainHomePage> {
                           builder:
                               (BuildContext context, AsyncSnapshot snapshot) {
                             if (!snapshot.hasData) {
-                              return Center(child: const CircularProgressIndicator(color: Colors.black,));
+                              return const Center(
+                                  child: CircularProgressIndicator(
+                                color: Colors.black,
+                              ));
                             }
                             return SizedBox(
                               height: 150,
@@ -104,7 +81,7 @@ class _MainHomePageState extends State<MainHomePage> {
                                           MainAxisAlignment.spaceBetween,
                                       children: [
                                         Padding(
-                                          padding: vpad8 + hpad8,
+                                          padding: vpad8 + hpad20,
                                           child: Text(
                                             snapshot.data.docs[index]['title'],
                                             style: contributorText,
@@ -159,7 +136,8 @@ class _MainHomePageState extends State<MainHomePage> {
                     FirebaseFirestore.instance.collection('feeds').snapshots(),
                 builder: (BuildContext context, AsyncSnapshot snapshot) {
                   if (!snapshot.hasData) {
-                    return Center(child: const CircularProgressIndicator(color: Colors.black));
+                    return const Center(
+                        child: CircularProgressIndicator(color: Colors.black));
                   }
                   // ignore: sized_box_for_whitespace
                   return Container(

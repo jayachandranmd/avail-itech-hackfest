@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
 import '../../widgets/textformfield.dart';
-import '../home/mainhomepage.dart';
+import '../home/homepage.dart';
 import 'sign_up.dart';
 
 class Login extends StatefulWidget {
@@ -139,7 +139,7 @@ class _LoginState extends State<Login> {
                         Navigator.pushAndRemoveUntil(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => const MainHomePage(),
+                              builder: (context) => const HomePage(),
                             ),
                             (route) => false);
                       } else {

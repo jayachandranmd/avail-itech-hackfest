@@ -8,3 +8,4 @@ Color blue = HexColor('#1100D8');
 Color white = HexColor('#FFFFFF');
 Color red = HexColor('#FF0000');
 Color yellow = HexColor('#FEED5E');
+Color lightgray = HexColor('#E7E7E7');
