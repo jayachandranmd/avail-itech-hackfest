@@ -4,8 +4,10 @@ import 'package:avail_itech_hackfest/utils/colors.dart';
 import 'package:avail_itech_hackfest/widgets/textformfield.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import '../../utils/constants.dart';
 import '../../utils/textstyle.dart';
+import '../home/mainhomepage.dart';
 
 class SignUp extends StatefulWidget {
   const SignUp({Key? key}) : super(key: key);
@@ -30,7 +32,6 @@ class _SignUpState extends State<SignUp> {
 
   @override
   void dispose() {
-    // TODO: implement dispose
     super.dispose();
     _email.dispose();
     _password.dispose();
@@ -340,14 +341,24 @@ class _SignUpState extends State<SignUp> {
                     width: 180,
                     height: 50,
                     child: ElevatedButton(
-                      onPressed: () {
+                      onPressed: () async {
                         if (_key.currentState!.validate()) {
-                          AuthMethods().signUpUser(
+                          String res = await AuthMethods().signUpUser(
                               email: _email.text.trim(),
                               password: _password.text.trim(),
                               firstName: firstname.text.trim(),
                               lastName: lastname.text.trim(),
                               phnNum: _phnNum.text.trim());
+                          if (res == "success") {
+                            Navigator.pushAndRemoveUntil(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const MainHomePage(),
+                                ),
+                                (route) => false);
+                          } else {
+                            Fluttertoast.showToast(msg: "Some error occurred");
+                          }
                         }
                       },
                       style: ElevatedButton.styleFrom(

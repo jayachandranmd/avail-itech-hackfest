@@ -4,8 +4,10 @@ import 'package:avail_itech_hackfest/utils/constants.dart';
 import 'package:avail_itech_hackfest/utils/textstyle.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 import '../../widgets/textformfield.dart';
+import '../home/mainhomepage.dart';
 import 'sign_up.dart';
 
 class Login extends StatefulWidget {
@@ -20,6 +22,8 @@ class _LoginState extends State<Login> {
   TextEditingController passwordcontroller = TextEditingController();
   final GlobalKey<FormState> key = GlobalKey<FormState>();
   bool _isObscure = true;
+
+  void signinUser() async {}
   @override
   void dispose() {
     super.dispose();
@@ -126,11 +130,21 @@ class _LoginState extends State<Login> {
                 width: double.infinity,
                 height: 50,
                 child: ElevatedButton(
-                  onPressed: () {
+                  onPressed: () async {
                     if (key.currentState!.validate()) {
-                      AuthMethods().loginUser(
+                      String res = await AuthMethods().loginUser(
                           email: emailcontroller.text.trim(),
                           password: passwordcontroller.text.trim());
+                      if (res == "success") {
+                        Navigator.pushAndRemoveUntil(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const MainHomePage(),
+                            ),
+                            (route) => false);
+                      } else {
+                        Fluttertoast.showToast(msg: "Some error occurred");
+                      }
                     }
                   },
                   style: ElevatedButton.styleFrom(
