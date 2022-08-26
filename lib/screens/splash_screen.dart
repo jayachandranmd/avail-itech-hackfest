@@ -1,9 +1,8 @@
 import 'dart:async';
+import 'package:avail_itech_hackfest/screens/onboarding.dart';
 import 'package:avail_itech_hackfest/utils/colors.dart';
 import 'package:avail_itech_hackfest/utils/constants.dart';
 import 'package:flutter/material.dart';
-
-import 'auth/sign_in.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -18,7 +17,7 @@ class _SplashScreenState extends State<SplashScreen> {
     Timer(const Duration(seconds: 3), () {
       Navigator.pushAndRemoveUntil(
           context,
-          MaterialPageRoute(builder: (context) => const Login()),
+          MaterialPageRoute(builder: (context) => const OnboardingPage()),
           (route) => false);
     });
     super.initState();
