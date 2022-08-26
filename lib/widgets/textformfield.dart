@@ -10,46 +10,48 @@ class TextFieldInput extends StatelessWidget {
   final hintText;
   final validate;
   final save;
+  final suffixIcon;
+  final keyboard;
 
-  const TextFieldInput({
-    Key? key,
-    required this.textEditingController,
-    this.validate,
-    this.isPass = false,
-    this.hintText,
-    this.save,
-  }) : super(key: key);
+  const TextFieldInput(
+      {Key? key,
+      required this.textEditingController,
+      this.validate,
+      this.keyboard,
+      this.isPass = false,
+      this.hintText,
+      this.save,
+      this.suffixIcon})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       height: 100,
       child: TextFormField(
+        keyboardType: keyboard,
         autovalidateMode: AutovalidateMode.onUserInteraction,
         validator: validate,
         onSaved: save,
         controller: textEditingController,
         textInputAction: TextInputAction.next,
         decoration: InputDecoration(
-          hintText: hintText,
-          border: OutlineInputBorder(
+            hintText: hintText,
+            border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(50),
+                borderSide: BorderSide.none),
+            focusedBorder: OutlineInputBorder(
+              borderSide: BorderSide(color: white),
               borderRadius: BorderRadius.circular(50),
-            borderSide: BorderSide.none
-          ),
-          focusedBorder:  OutlineInputBorder(
-              borderSide: BorderSide(color:white),
-              borderRadius: BorderRadius.circular(50),
-          ),
-          enabledBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(50),
-              borderSide: BorderSide.none
-          ),
-          filled: true,
-          contentPadding: const EdgeInsets.all(20),
-        ),
+            ),
+            enabledBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(50),
+                borderSide: BorderSide.none),
+            filled: true,
+            contentPadding: const EdgeInsets.all(20),
+            suffixIcon: suffixIcon),
         obscureText: isPass,
       ),
     );
   }
 }
-
