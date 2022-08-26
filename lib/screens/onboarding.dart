@@ -122,7 +122,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
                             Navigator.pushAndRemoveUntil(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => SignUp()),
+                                    builder: (context) => const SignUp()),
                                 (route) => false);
                           }
                         },
@@ -132,12 +132,12 @@ class _OnboardingPageState extends State<OnboardingPage> {
                             shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(40))),
                         child: currentIndex != 3
-                            ? Text('Next',
+                            ? const Text('Next',
                                 style: TextStyle(
                                     fontSize: 20,
                                     fontWeight: FontWeight.w700,
                                     color: Colors.black))
-                            : Text('Done!',
+                            : const Text('Done!',
                                 style: TextStyle(
                                     fontSize: 20,
                                     fontWeight: FontWeight.w700,
