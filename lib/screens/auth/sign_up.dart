@@ -1,4 +1,5 @@
 import 'package:avail_itech_hackfest/screens/auth/sign_in.dart';
+import 'package:avail_itech_hackfest/screens/home/homepage.dart';
 import 'package:avail_itech_hackfest/utils/auth_method.dart';
 import 'package:avail_itech_hackfest/utils/colors.dart';
 import 'package:avail_itech_hackfest/widgets/textformfield.dart';
@@ -7,7 +8,6 @@ import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import '../../utils/constants.dart';
 import '../../utils/textstyle.dart';
-import '../home/mainhomepage.dart';
 
 class SignUp extends StatefulWidget {
   const SignUp({Key? key}) : super(key: key);
@@ -328,8 +328,8 @@ class _SignUpState extends State<SignUp> {
                 children: [
                   GestureDetector(
                       child: Text(
-                        'Log instead',
-                        style: headingBoldText,
+                        'Login instead',
+                        style: selectedText,
                       ),
                       onTap: () {
                         Navigator.push(
@@ -353,7 +353,7 @@ class _SignUpState extends State<SignUp> {
                             Navigator.pushAndRemoveUntil(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => const MainHomePage(),
+                                  builder: (context) => const HomePage(),
                                 ),
                                 (route) => false);
                           } else {
