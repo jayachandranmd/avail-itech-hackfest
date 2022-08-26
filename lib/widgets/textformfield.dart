@@ -4,6 +4,7 @@ class TextFieldInput extends StatelessWidget {
   final TextEditingController textEditingController;
   final bool isPass;
   final String hintText;
+  // ignore: prefer_typing_uninitialized_variables
   final validate;
 
   const TextFieldInput({
