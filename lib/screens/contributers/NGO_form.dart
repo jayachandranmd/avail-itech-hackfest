@@ -1,4 +1,5 @@
 import 'package:avail_itech_hackfest/screens/contributers/contributer_intro.dart';
+import 'package:avail_itech_hackfest/screens/contributers/terms_conditions.dart';
 import 'package:avail_itech_hackfest/screens/contributers/verfication_progress.dart';
 import 'package:avail_itech_hackfest/utils/constants.dart';
 import 'package:avail_itech_hackfest/widgets/textformfield.dart';
@@ -49,7 +50,7 @@ class _NGOFormState extends State<NGOForm> {
                   Navigator.pushAndRemoveUntil(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => VerificationProcess(),
+                        builder: (context) => TermsAndCondtion(),
                       ),
                           (route) => false);
 
