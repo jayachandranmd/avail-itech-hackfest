@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.avail_itech_hackfest">
    <application
-        android:label="avail_itech_hackfest"
+        android:label="Avail"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

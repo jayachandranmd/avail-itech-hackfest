@@ -100,6 +100,16 @@ class _UserProfileState extends State<UserProfile> {
                     ],
                   ),
                 ),
+                sBoxH10,
+                Center(
+                  child: Text('Verification process pending...',
+                  style: TextStyle(
+                    fontSize:17,
+                    color: red
+                  ),
+                    textAlign: TextAlign.center,
+                  ),
+                ),
                 sBoxH20,
                 Divider(
                   color: lightgray,

@@ -231,7 +231,7 @@ class _ContributerIntroState extends State<ContributerIntro> {
                               child: Padding(
                                 padding: const EdgeInsets.all(30.0),
                                 child: CachedNetworkImage(
-                                  imageUrl: 'https://firebasestorage.googleapis.com/v0/b/avail-38482.appspot.com/o/organization.png?alt=media&token=e5321013-de24-404c-9667-5ce2fe2665ac',
+                                  imageUrl: 'https://firebasestorage.googleapis.com/v0/b/avail-38482.appspot.com/o/hotels.png?alt=media&token=91f25744-1676-4325-85ab-f2861b229d68',
                                   height: 80,
                                 ),
                               ),
@@ -243,15 +243,12 @@ class _ContributerIntroState extends State<ContributerIntro> {
                           ],
                         ),
                       ),
-                      Text('Organization',style:TextStyle(fontSize: 21),)
+                      Text('Hotels',style:TextStyle(fontSize: 21),)
                     ],
                   ),
                 ],
               ),
               SizedBox(height: 20,),
-
-
-
             ],
           ),
         ),
