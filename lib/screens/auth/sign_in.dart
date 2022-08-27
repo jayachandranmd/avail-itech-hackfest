@@ -162,7 +162,7 @@ class _LoginState extends State<Login> {
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   SizedBox(
-                    width: 150,
+                    width: MediaQuery.of(context).size.width/2.5,
                     child: Divider(
                       thickness: 2,
                       color: darkgrey,
@@ -173,7 +173,7 @@ class _LoginState extends State<Login> {
                     style: TextStyle(color: darkgrey),
                   ),
                   SizedBox(
-                    width: 150,
+                    width: MediaQuery.of(context).size.width/2.5,
                     child: Divider(
                       thickness: 2,
                       color: darkgrey,

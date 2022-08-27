@@ -1,5 +1,6 @@
 import 'package:avail_itech_hackfest/screens/contributers/verfication_progress.dart';
 import 'package:avail_itech_hackfest/widgets/textformfield.dart';
+import 'package:avail_itech_hackfest/screens/contributers/terms_conditions.dart';
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 import '../../utils/colors.dart';
@@ -64,7 +65,7 @@ class _IndividualFormState extends State<IndividualForm> {
                     Navigator.pushAndRemoveUntil(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => const VerificationProcess(),
+                          builder: (context) => const TermsAndCondtion(),
                         ),
                             (route) => false);
 
