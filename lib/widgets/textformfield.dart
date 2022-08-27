@@ -80,7 +80,7 @@ class FormsField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 100,
+      height: 70,
       child: Theme(
         data: Theme.of(context).copyWith(primaryColor: grey),
         child: TextFormField(

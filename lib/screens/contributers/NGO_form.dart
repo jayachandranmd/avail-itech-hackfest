@@ -4,7 +4,6 @@ import 'package:avail_itech_hackfest/utils/constants.dart';
 import 'package:avail_itech_hackfest/widgets/textformfield.dart';
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
-
 import '../../utils/colors.dart';
 import '../../utils/textstyle.dart';
 
@@ -100,7 +99,7 @@ class _NGOFormState extends State<NGOForm> {
                  FormsField(textEditingController: ngo_state,hintText: "State",
                    validate: (value) {
                      if (value == null || value.isEmpty) {
-                       return 'Please enter some text';
+                       return 'Please enter the state';
                      }
                    },
                    save: (value) {
@@ -155,8 +154,6 @@ class _NGOFormState extends State<NGOForm> {
                    save: (value) {
                      ngo_id.text = value!;
                    },),
-
-
                ],
               ),
             ),

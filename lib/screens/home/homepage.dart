@@ -8,6 +8,8 @@ import 'package:flutter/material.dart';
 import 'package:hidden_drawer_menu/hidden_drawer_menu.dart';
 
 import '../../utils/constants.dart';
+import '../contributers/individual_form.dart';
+import '../contributers/organization_form.dart';
 import '../post_form.dart';
 
 class HomePage extends StatefulWidget {
