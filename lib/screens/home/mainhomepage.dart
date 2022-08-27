@@ -6,6 +6,7 @@ import 'package:card_swiper/card_swiper.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
+import 'package:url_launcher/url_launcher.dart';
 import '../../utils/colors.dart';
 import '../../utils/textstyle.dart';
 
@@ -212,7 +213,7 @@ class _MainHomePageState extends State<MainHomePage> {
                                         MainAxisAlignment.spaceBetween,
                                     children: [
                                       SizedBox(
-                                        width: 100,
+                                        width: 80,
                                         child: ListTile(
                                           title: CachedNetworkImage(
                                             imageUrl:
@@ -226,23 +227,33 @@ class _MainHomePageState extends State<MainHomePage> {
                                           )),
                                         ),
                                       ),
-                                      SizedBox(
-                                        width: 100,
-                                        child: ListTile(
-                                          title: CachedNetworkImage(
-                                            imageUrl:
-                                                'https://firebasestorage.googleapis.com/v0/b/avail-38482.appspot.com/o/whatsapp.png?alt=media&token=fba174f0-dd72-41e4-9b06-d28281c41189',
-                                            height: 25,
+                                      GestureDetector(
+                                        onTap: () async{
+                                          var url = "https://wa.me/+917094523949?text=""";
+                                          if (await canLaunch(url)) {
+                                            await launch(url);
+                                          } else {
+                                            throw 'Could not launch $url';
+                                          }
+                                        },
+                                        child: SizedBox(
+                                          width: 80,
+                                          child: ListTile(
+                                            title: CachedNetworkImage(
+                                              imageUrl:
+                                                  'https://firebasestorage.googleapis.com/v0/b/avail-38482.appspot.com/o/whatsapp.png?alt=media&token=fba174f0-dd72-41e4-9b06-d28281c41189',
+                                              height: 25,
+                                            ),
+                                            subtitle: Center(
+                                                child: Text(
+                                              'Chat',
+                                              style: subtitle,
+                                            )),
                                           ),
-                                          subtitle: Center(
-                                              child: Text(
-                                            'Chat',
-                                            style: subtitle,
-                                          )),
                                         ),
                                       ),
                                       SizedBox(
-                                        width: 100,
+                                        width: 80,
                                         child: ListTile(
                                           title: CachedNetworkImage(
                                             imageUrl:
@@ -256,6 +267,27 @@ class _MainHomePageState extends State<MainHomePage> {
                                           )),
                                         ),
                                       ),
+                                      if (snapshot.data.docs[index]['volunteerStatus'])
+                                        GestureDetector(
+                                          onTap: () {
+                                            Navigator.push(context, MaterialPageRoute(builder: (context)=> VolunteerForm() ));
+                                          },
+                                          child: SizedBox(
+                                          width: 80,
+                                          child: ListTile(
+                                            title: CachedNetworkImage(
+                                              imageUrl:
+                                                  'https://firebasestorage.googleapis.com/v0/b/avail-38482.appspot.com/o/apply.png?alt=media&token=e903fcac-28bc-42b0-8a39-2821f76fff41',
+                                              height: 20,
+                                            ),
+                                            subtitle: Center(
+                                                child: Text(
+                                                  'Apply',
+                                                  style: subtitle,
+                                                )),
+                                          ),
+                                      ),
+                                        ) else Container(height: 0,width: 0,)
                                     ],
                                   ),
                                 ],

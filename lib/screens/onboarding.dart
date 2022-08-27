@@ -57,8 +57,8 @@ class _OnboardingPageState extends State<OnboardingPage> {
                                       sBoxH30,
                                       CachedNetworkImage(
                                           imageUrl: snapshot.data!.docs[index]
-                                              ['image']),
-                                      sBoxH60,
+                                              ['image'],height: MediaQuery.of(context).size.height/4.5,),
+                                      sBoxH30,
                                       Text(
                                         snapshot.data!.docs[index]['title'],
                                         style: TextStyle(

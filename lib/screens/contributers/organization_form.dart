@@ -1,3 +1,4 @@
+import 'package:avail_itech_hackfest/screens/contributers/terms_conditions.dart';
 import 'package:avail_itech_hackfest/screens/contributers/verfication_progress.dart';
 import 'package:flutter/material.dart';
 import 'package:avail_itech_hackfest/widgets/textformfield.dart';
@@ -47,7 +48,7 @@ class _OrganizationFormState extends State<OrganizationForm> {
                 Navigator.pushAndRemoveUntil(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => VerificationProcess(),
+                      builder: (context) => TermsAndCondtion(),
                     ),
                         (route) => false);
 
