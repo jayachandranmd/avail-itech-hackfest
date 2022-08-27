@@ -282,45 +282,39 @@ class _SignUpState extends State<SignUp> {
                   ],
                 ),
               ),
-              Row(
-                children: [
-                  Checkbox(
-                    value: remainder,
-                    onChanged: (value) {
-                      setState(() {
-                        remainder = value!;
-                      });
-                    },
-                    activeColor: black,
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(5)),
-                    side: BorderSide(color: black),
-                  ),
-                  Text(
-                    'Yes , send monthly newsletter to my email',
-                    style: textFieldpara,
-                  )
-                ],
+              CheckboxListTile(
+                value: remainder,
+                checkboxShape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(5)),
+                controlAffinity: ListTileControlAffinity.leading,
+                onChanged:(value) {
+                  setState(() {
+                    remainder= value!;
+                  });
+                },activeColor: Colors.black,
+                side: BorderSide(color: black),
+                title: Text(
+                  'I accept terms and conditions ',
+                  style: textFieldpara,
+                ),
               ),
-              Row(
-                children: [
-                  Checkbox(
-                    value: terms,
-                    onChanged: (value) {
-                      setState(() {
-                        terms = value!;
-                      });
-                    },
-                    activeColor: black,
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(5)),
-                    side: BorderSide(color: black),
-                  ),
-                  Text(
-                    'I accept terms and conditions ',
-                    style: textFieldpara,
-                  ),
-                ],
+
+              CheckboxListTile(
+                value: terms,
+                checkboxShape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(5)),
+                controlAffinity: ListTileControlAffinity.leading,
+                onChanged:(value) {
+                  setState(() {
+                    terms = value!;
+                  });
+                },activeColor: Colors.black,
+                side: BorderSide(color: black),
+
+                title: Text(
+                  'I accept terms and conditions ',
+                  style: textFieldpara,
+                ),
               ),
               sBoxH10,
               Row(
